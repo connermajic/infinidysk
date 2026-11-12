@@ -546,6 +546,9 @@ pub async fn import(
             Kind::Plain => outputs.extend(volumes.remove(&i).and_then(plain)),
         }
     }
+    // Releases first bodies no later step reads (PAR2, skipped files) before the
+    // archive reads; wanted files keep theirs in `job.bodies`.
+    drop(inputs);
     job.progress.plan(Step::Archives, sets.len() + downstream);
     for ((kind, _), mut members) in sets {
         members.sort_unstable();
