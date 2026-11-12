@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0-beta.9](https://github.com/infinidysk/infinidysk/compare/v2.0.0-beta.8...v2.0.0-beta.9) (2026-11-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* **health:** health.check_percent no longer controls imports. health.import_check_percent defaults to 5; set it to your previous percentage to retain the same import depth, or to 100 to retain full import checks and the first-check handoff.
+
+### Features
+
+* **api:** report memory.stat kinds, swap, /proc/self/status and raw segment-cache size in live resources ([#1902](https://github.com/infinidysk/infinidysk/issues/1902)) ([d300178](https://github.com/infinidysk/infinidysk/commit/d3001788c30b7b37c088c63a58fde21d6b88a73e))
+* **health:** separate the import sample from the health sample ([#1901](https://github.com/infinidysk/infinidysk/issues/1901)) ([27b3a20](https://github.com/infinidysk/infinidysk/commit/27b3a206616b54dafea487b9739170ba5ae8522a)), closes [#1864](https://github.com/infinidysk/infinidysk/issues/1864)
+
+
+### Bug Fixes
+
+* **health:** forget the streaks of deleted files ([#1905](https://github.com/infinidysk/infinidysk/issues/1905)) ([4e1b17a](https://github.com/infinidysk/infinidysk/commit/4e1b17a50a2325beca21439b8f62af52b7c1564c))
+* **nntp:** look up a provider's address once when opening many connections ([#1899](https://github.com/infinidysk/infinidysk/issues/1899)) ([f71df83](https://github.com/infinidysk/infinidysk/commit/f71df8362eb8481acee36d2598e769aeb0c3c1c2))
+
 ## [2.0.0-beta.8](https://github.com/infinidysk/infinidysk/compare/v2.0.0-beta.7...v2.0.0-beta.8) (2026-11-11)
 
 
